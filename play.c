@@ -4,6 +4,13 @@
 #include <time.h>
 #include <string.h>
 
+// This program takes into acount all the possible ways a monopoly player can move through the board.
+// Rolling dices, using cards or going to jail.
+// It will display the amount of times its visited each space in the board.
+// Using this numbers on a graph, will help us interpret them much better.
+
+#define ROUNDS 100000000
+
 int roll()
 {
 	int dice1;
@@ -147,10 +154,9 @@ int main(int argc, char **argv)
 		printf("cards: enabled\n");
 	else
 		printf("cards: disabled\n");
-	while (i++ < 100000000)
+	while (i++ < ROUNDS)
 	{
 		moves = roll();
-		//printf("%d\n", moves);
 		if (!moves)
 		{
 			sent_JAIL++;
@@ -192,18 +198,3 @@ int main(int argc, char **argv)
 	//print_board(scores);
 	print_cells(scores);
 }
-/*
-cards
-
-com chest
-1. Advance to Go
-2. Go to Jail
-3. advance to 24
-4. advance to 11
-
-chance
-1. Advance to go
-2. go to jail
-3. advance to 5
-4. advance to 39
-*/
