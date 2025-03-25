@@ -1,1 +1,1 @@
-![MonopolyStats](Statistics.jpg)
+![MonopolyStats](Statistics.png)
